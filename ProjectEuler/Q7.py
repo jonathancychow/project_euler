@@ -28,13 +28,13 @@ print('Run time for Q7 for loop =',tend-tstart,'s')
 
 
 tstart = time.time()
-#j=0
-#k=0
-#while j<10001:
-#	k += 1
-#	if isPrime(k)==True:
-#		PrimeList[j]=k
-#		j = j+1
+j=0
+k=0
+while j<10001:
+	k += 1
+	if isPrime(k)==True:
+		PrimeList[j]=k
+		j = j+1
 
 			
 tend = time.time()

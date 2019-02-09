@@ -16,7 +16,7 @@ max_prime = 0
 max_i = 0
 max_j = 0
 quartic_sum = 2
-
+tstart = time.time()
 for i in range (-limit, limit,1):
     for j in range (-limit, limit,1):
         while isPrime2(quartic_sum)==True & bool(quartic_sum > 0)==True :
@@ -35,3 +35,5 @@ for i in range (-limit, limit,1):
 print (max_j)
 print (max_i)
 print (max_j* max_i)
+tend = time.time()
+print('Run time for Q27 =',tend-tstart,'s')

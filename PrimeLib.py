@@ -22,7 +22,8 @@ def isPrime2(n):
 
     return True
 
-
+# From zacharydenton
+# https://github.com/zacharydenton/euler/blob/master/047/consecutive-factors.py
 def factorisePrime(n):
     if n < 1:
         raise ValueError('fact() argument should be >= 1')
@@ -48,7 +49,7 @@ def factorisePrime(n):
     return res
 
 
-def chekc_unique_prime_factor(list):
+def chekcUniquePrimeFactor(list):
     j = 0
     distinct_prime_factor=[]
     distinct_prime_factor.append(list[0])
