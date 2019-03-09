@@ -1,25 +1,24 @@
 import math
 
+
 def isPrime(n):
-	if (n==1):
-		return False
-	elif (n==2):
-		return True;
-	else:
-		for x in range(2,n):
-			if(n % x==0):
-				return False
-	return True     
- 
-	
+    if n == 1:
+        return False
+    elif n == 2:
+        return True;
+    else:
+        for x in range(2, n):
+            if n % x == 0:
+                return False
+    return True
+
 
 def isPrime2(n):
-    if n==2 or n==3: return True
-    if n%2==0 or n<2: return False
-    for i in range(3,int(n**0.5)+1,2):   # only odd numbers
-        if n%i==0:
-            return False    
-
+    if n == 2 or n == 3: return True
+    if n % 2 == 0 or n < 2: return False
+    for i in range(3, int(n ** 0.5) + 1, 2):  # only odd numbers
+        if n % i == 0:
+            return False
     return True
 
 # From zacharydenton
@@ -47,7 +46,6 @@ def factorisePrime(n):
     if n != 1:
         res.append(n)
     return res
-
 
 def chekcUniquePrimeFactor(list):
     j = 0
