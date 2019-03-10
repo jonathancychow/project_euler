@@ -59,3 +59,10 @@ def chekcUniquePrimeFactor(list):
                 j += 1
                 distinct_prime_factor.append(list[i])
     return distinct_prime_factor
+
+def generate_prime_list(n):
+    prime_list = []
+    for i in range(2, n):
+        if isPrime2(i):
+            prime_list.append(i)
+    return prime_list
