@@ -8,8 +8,6 @@ for PathToAdd in PathsToAdd:
         sys.path.insert(0,PathToAdd)
 from PrimeLib import *
 
-
-
 class consec_prime_sum:
 
     def __init__(self):
@@ -19,7 +17,7 @@ class consec_prime_sum:
         self.sequence = []
         self.sequence_sum = []
 
-    def run(self, n):
+    def run1(self, n):
         # self.generate_prime_list(n)
         self.primenumber = generate_prime_list(n)
         sequence = 0
@@ -56,10 +54,37 @@ class consec_prime_sum:
         return self.number[max_sequence_index]
 
 
+    def run2(self, n):
+
+        self.primenumber = generate_prime_list(n)
+        largest_prime_count = 0
+        largest_prime_sum = 0
+
+        for i in range(0, len(self.primenumber)):
+            for j in range(i + 1, len(self.primenumber) + 1):
+                current_sum = sum(self.primenumber[i:j])
+                if current_sum > n:
+                    break
+                current_count = len(self.primenumber[i:j])
+                if isPrime2(current_sum):
+                    if current_count > largest_prime_count:
+                        largest_prime_sum = current_sum
+                        largest_prime_count = current_count
+
+        return largest_prime_sum
+
+
+
 if __name__ == "__main__":
     ConsecPrimeSum = consec_prime_sum()
     tstart = time.time()
-    print((ConsecPrimeSum.run(n=1000000)))
+    print((ConsecPrimeSum.run2(n=1000000)))
+    tend = time.time()
+    print('Run time for Q50= ', tend - tstart, 's')
+
+
+    tstart = time.time()
+    print((ConsecPrimeSum.run1(n=1000000)))
     tend = time.time()
     print('Run time for Q50= ', tend - tstart, 's')
 
