@@ -66,3 +66,14 @@ def generate_prime_list(n):
         if isPrime2(i):
             prime_list.append(i)
     return prime_list
+
+def generate_prime_list2(n):
+    prime_list = []
+    i=2
+    while len(prime_list)<n:
+       if isPrime2(i)==1:
+           prime_list.append(i)
+           i = i+1
+       else:
+           i = i+1
+    return prime_list
