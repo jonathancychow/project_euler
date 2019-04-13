@@ -7,7 +7,7 @@ PathsToAdd = [os.path.abspath(ThisFolder),
 for PathToAdd in PathsToAdd:
     if PathToAdd not in sys.path:
         sys.path.insert(0,PathToAdd)
-from PrimeLib import *
+from PrimeLib import prime_pair, generate_prime_list, isPrime2
 
 class prime_pair_sum:
 
@@ -18,7 +18,7 @@ class prime_pair_sum:
         self.prime_number_matrix = []
         self.best = float("inf")
         self.best_combination = []
-        self.set=4
+        self.set = 4
 
     def run1(self, n):#brute force appraoch
         # self.generate_prime_list(n)
@@ -41,7 +41,7 @@ class prime_pair_sum:
 
         return self
 
-    def run2(self,n): #Generate look up table
+    def run2(self,n): #Generate look up table - brute force as well
         # self.generate_prime_list(n)
         self.primenumber = generate_prime_list(n)
         # self.primenumber = generate_prime_list2(n)
@@ -57,7 +57,6 @@ class prime_pair_sum:
         for permut in self.combination:
             if sum(permut)<sum(self.best_combination):
                 iter_num = permutations(permut, 2)
-                # for i in range(len(permut)):
                 no = 0
                 for i in iter_num:
 
@@ -69,13 +68,34 @@ class prime_pair_sum:
                     self.best = sum(permut)
                     self.best_combination = permut
 
-
-        return self
+    def run3(self,n):
+        self.primenumber = generate_prime_list(n)
+        for i in self.primenumber: # first number
+            for j in self.primenumber: # second number
+                if j<i:
+                    continue
+                if prime_pair(i,j): # check if i and j is a pair
+                    for k in self.primenumber: # third number
+                        if k<j:
+                            continue
+                        if prime_pair(i,k) and prime_pair(j,k):
+                            for l in self.primenumber:
+                                if l<k:
+                                    continue
+                                if prime_pair(i,l) and prime_pair(j,l) and prime_pair(k,l):
+                                    for m in self.primenumber:
+                                        if m<k:
+                                            continue
+                                        if prime_pair(i, m) and prime_pair(j, m) and prime_pair(k, m)and prime_pair(l,m):
+                                            self.best_combination=[i,j,k,l,m]
+                                            return self
 
 if __name__ == "__main__":
     PrimePairSum = prime_pair_sum()
     tstart = time.time()
-    print((PrimePairSum.run2(n=10000)))
+    PrimePairSum.run3(n=10000)
+    print('Best Sum = ',sum(PrimePairSum.best_combination))
+    print('Best Combination = ',PrimePairSum.best_combination)
     tend = time.time()
-    print('Run time for Q50= ', tend - tstart, 's')
+    print('Run time for Q60= ', tend - tstart, 's')
 
