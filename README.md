@@ -9,3 +9,7 @@ conda create --name projecteuler python=3.10
 conda activate projecteuler
 python setup.py install
 ```
+## Test
+```
+pytest -v
+```
