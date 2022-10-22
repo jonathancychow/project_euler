@@ -1,5 +1,5 @@
-# Prime_number_tools
-Scripts for working with prime number problem
+# Project Euler
+Solutions for problem on [Project Euler](https://projecteuler.net/). 
 
 ## Setting up environment and dependency
 
