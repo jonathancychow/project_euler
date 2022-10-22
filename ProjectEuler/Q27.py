@@ -1,14 +1,6 @@
-import time, sys, os
+import time
+from primelib.primelib import isPrime2
 
-ThisFolder = os.path.dirname(os.path.abspath(__file__))
-PathsToAdd = [os.path.abspath(ThisFolder),
-              os.path.abspath(os.path.join(ThisFolder,'..'))]
-
-for PathToAdd in PathsToAdd:
-    if PathToAdd not in sys.path:
-        sys.path.insert(0,PathToAdd)
-
-from PrimeLib import *
 
 # Define the upper and the lower limit of the check
 limit = 1000

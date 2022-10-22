@@ -1,17 +1,8 @@
-import time, sys, os
+
 import math
 import datetime 
 
-ThisFolder = os.path.dirname(os.path.abspath(__file__))
-PathsToAdd = [os.path.abspath(ThisFolder),
-              os.path.abspath(os.path.join(ThisFolder,'..'))]
-
-for PathToAdd in PathsToAdd:
-    if PathToAdd not in sys.path:
-        sys.path.insert(0,PathToAdd)
-
-
-from PrimeLib import generate_prime_list2
+from primelib.primelib import generate_prime_list2
 
 
 max_value = 10000

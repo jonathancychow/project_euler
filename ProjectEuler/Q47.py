@@ -1,14 +1,7 @@
-import time, numpy, sys, os
+import time
 
-ThisFolder = os.path.dirname(os.path.abspath(__file__))
-PathsToAdd = [os.path.abspath(ThisFolder),
-              os.path.abspath(os.path.join(ThisFolder,'..'))]
+from primelib.primelib import chekcUniquePrimeFactor, factorisePrime
 
-for PathToAdd in PathsToAdd:
-    if PathToAdd not in sys.path:
-        sys.path.insert(0,PathToAdd)
-
-from PrimeLib import *
 
 # set the upper limit
 limit = 150000

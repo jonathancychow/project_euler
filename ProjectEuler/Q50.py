@@ -1,12 +1,13 @@
 from itertools import *
 import time, sys, os
-ThisFolder = os.path.dirname(os.path.abspath(__file__))
-PathsToAdd = [os.path.abspath(ThisFolder),
-              os.path.abspath(os.path.join(ThisFolder,'..'))]
-for PathToAdd in PathsToAdd:
-    if PathToAdd not in sys.path:
-        sys.path.insert(0,PathToAdd)
-from PrimeLib import *
+# ThisFolder = os.path.dirname(os.path.abspath(__file__))
+# PathsToAdd = [os.path.abspath(ThisFolder),
+#               os.path.abspath(os.path.join(ThisFolder,'..'))]
+# for PathToAdd in PathsToAdd:
+#     if PathToAdd not in sys.path:
+#         sys.path.insert(0,PathToAdd)
+# from PrimeLib import *
+from primelib.primelib import isPrime2, generate_prime_list
 
 class consec_prime_sum:
 

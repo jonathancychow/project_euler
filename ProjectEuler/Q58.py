@@ -2,13 +2,7 @@ from collections import defaultdict
 from itertools import *
 import time, sys, os
 
-ThisFolder = os.path.dirname(os.path.abspath(__file__))
-PathsToAdd = [os.path.abspath(ThisFolder),
-              os.path.abspath(os.path.join(ThisFolder,'..'))]
-for PathToAdd in PathsToAdd:
-    if PathToAdd not in sys.path:
-        sys.path.insert(0,PathToAdd)
-from PrimeLib import isPrime2
+from primelib.primelib import isPrime2
 
 class SpiralPrimes:
 
