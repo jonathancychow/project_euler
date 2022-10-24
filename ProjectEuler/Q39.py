@@ -1,4 +1,5 @@
 import time
+import operator
 
 def right_tri1(n):
     a=b=c=0
@@ -31,14 +32,10 @@ def right_tri2(n):
     return len(sides)
 
 def get_most(n):
-    max_val=0
-    max_i =0
-    for i in range(n):
-        current_val = right_tri2(i)
-        if current_val > max_val:
-            max_val = current_val
-            max_i = i
-    return max_i
+    sides = list(map(right_tri2, list(range(n))))
+    max_index, max_value = max(enumerate(sides), key=operator.itemgetter(1))
+    return max_index
+
 p=1000
 tstart = time.time()
 # print('Ans = ',max(right_tri2(i) for i in range(p)))
